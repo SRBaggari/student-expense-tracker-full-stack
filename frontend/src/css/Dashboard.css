@@ -1,0 +1,177 @@
+/* Dashboard styling */
+
+/* Metric Cards Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 5px solid var(--primary-blue);
+  animation: fadeIn 0.4s ease-out;
+}
+
+.metric-card.budget {
+  border-left-color: var(--primary-light);
+}
+
+.metric-card.remaining {
+  border-left-color: var(--success-green);
+}
+
+.metric-card.remaining.danger-zone {
+  border-left-color: var(--danger-red);
+  background-color: var(--danger-light);
+}
+
+.metric-card.top-category {
+  border-left-color: var(--warning-amber);
+}
+
+.metric-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--neutral-body);
+  letter-spacing: 0.5px;
+}
+
+.metric-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--neutral-dark);
+  margin: 0.5rem 0;
+}
+
+.metric-icon {
+  align-self: flex-end;
+  font-size: 2rem;
+  opacity: 0.8;
+  margin-top: -2.5rem;
+}
+
+/* Two-column layout */
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Filters Panel */
+.filters-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--white);
+  padding: 1rem;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--border-color);
+  align-items: center;
+}
+
+.filter-item {
+  flex: 1;
+  min-width: 150px;
+}
+
+/* Expense List & Transactions */
+.recent-expenses-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.expense-row {
+  transition: background-color 0.2s;
+}
+
+.expense-category-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.badge-food { background-color: #ffe0b2; color: #e65100; }
+.badge-transport { background-color: #b3e5fc; color: #01579b; }
+.badge-books { background-color: #d1c4e9; color: #311b92; }
+.badge-entertainment { background-color: #f8bbd0; color: #880e4f; }
+.badge-shopping { background-color: #c8e6c9; color: #1b5e20; }
+.badge-others { background-color: #cfd8dc; color: #37474f; }
+
+.expense-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.action-btn:hover {
+  background-color: #f1f5f9;
+}
+
+.action-btn.edit {
+  color: var(--primary-blue);
+}
+
+.action-btn.delete {
+  color: var(--danger-red);
+}
+
+/* Form Styles inside Dashboard */
+.form-title {
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--primary-accent);
+  padding-bottom: 0.5rem;
+}
+
+.total-summary-card {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+  color: var(--white);
+  border-left: none !important;
+}
+
+.total-summary-card .metric-title,
+.total-summary-card .metric-value,
+.total-summary-card .metric-icon {
+  color: var(--white);
+}
+
+.overspending-warning {
+  background-color: var(--danger-light);
+  color: var(--danger-red);
+  border: 1px solid rgba(198, 40, 40, 0.2);
+  padding: 1rem;
+  border-radius: var(--border-radius-md);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.overspending-warning-icon {
+  font-size: 1.5rem;
+}
